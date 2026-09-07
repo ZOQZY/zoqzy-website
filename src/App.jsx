@@ -84,7 +84,7 @@ export default function App() {
   const journeyFill = Math.min(100, Math.max(0, (pageProgress - 0.08) * 420))
 
   return (
-    <div style={{ position: 'relative', minHeight: '100vh', overflowX: 'hidden' }}>
+    <div style={{ position: 'relative', minHeight: '100vh', overflowX: 'clip' }}>
       <div aria-hidden="true" className="bg-grid" />
 
       <div className="progress-track">
