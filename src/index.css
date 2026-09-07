@@ -106,6 +106,7 @@ h1, h2, h3, p, dl, dd { margin: 0; }
 .mobile-menu { border-top: 1px solid var(--bd); background: var(--bg); padding: 24px clamp(20px, 4vw, 48px) 34px; display: flex; flex-direction: column; gap: 4px; }
 .mobile-menu a { color: var(--fg); font-size: 28px; font-weight: 700; letter-spacing: -.02em; padding: 10px 0; border-bottom: 1px solid var(--bd); }
 .mobile-menu .btn { margin-top: 18px; justify-content: space-between; font-size: 17px; border-bottom: none; }
+.mobile-menu .btn-primary { color: var(--bg); }
 
 .progress-track { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 60; background: transparent; }
 .progress-fill { height: 100%; background: var(--accent); transform-origin: left; }
