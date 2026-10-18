@@ -2,10 +2,47 @@ import { useState } from 'react'
 
 export default function Contact() {
   const [sent, setSent] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState('')
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault()
-    setSent(true)
+    setSubmitting(true)
+    setError('')
+
+    const form = new FormData(e.currentTarget)
+    const payload = {
+      name: form.get('name') || 'Website inquiry',
+      email: form.get('email') || '',
+      company: form.get('company') || 'Not provided',
+      type: form.get('type') || 'Not specified',
+      budget: form.get('budget') || 'Not specified',
+      message: form.get('message') || '',
+      _subject: `New inquiry from ${form.get('name') || 'Website inquiry'}`,
+      _captcha: 'false',
+    }
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/mail2zoqzy@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      })
+
+      if (!response.ok) {
+        throw new Error('Submission failed')
+      }
+
+      e.currentTarget.reset()
+      setSent(true)
+    } catch (err) {
+      setError('Something went wrong while sending your inquiry. Please try again or email mail2zoqzy@gmail.com directly.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -17,15 +54,15 @@ export default function Contact() {
           <dl className="contact-details">
             <div>
               <dt>Email</dt>
-              <dd>[EMAIL]</dd>
+              <dd><input type="email" value="[EMAIL]" readOnly aria-label="Email" /></dd>
             </div>
             <div>
               <dt>Phone</dt>
-              <dd>[PHONE]</dd>
+              <dd><input type="tel" value="[PHONE]" readOnly aria-label="Phone" /></dd>
             </div>
             <div>
               <dt>Location</dt>
-              <dd>[LOCATION]</dd>
+              <dd><input type="text" value="[LOCATION]" readOnly aria-label="Location" /></dd>
             </div>
           </dl>
         </div>
@@ -79,7 +116,8 @@ export default function Contact() {
                 <label htmlFor="f-msg">Tell us about your project</label>
                 <textarea id="f-msg" name="message" rows={5} required />
               </div>
-              <button type="submit" className="btn btn-primary">Send inquiry <span aria-hidden="true">→</span></button>
+              {error ? <div className="field full error-message">{error}</div> : null}
+              <button type="submit" className="btn btn-primary" disabled={submitting}>{submitting ? 'Sending...' : 'Send inquiry'} <span aria-hidden="true">→</span></button>
             </form>
           )}
         </div>

@@ -7,7 +7,7 @@ import Services from './components/Services.jsx'
 import Solutions from './components/Solutions.jsx'
 import Process from './components/Process.jsx'
 import Technology from './components/Technology.jsx'
-import Work from './components/Work.jsx'
+// import Work from './components/Work.jsx'
 import Principles from './components/Principles.jsx'
 import About from './components/About.jsx'
 import FinalCta from './components/FinalCta.jsx'
@@ -107,7 +107,7 @@ export default function App() {
         <Solutions />
         <Process />
         <Technology />
-        <Work />
+        {/* <Work /> */}
         <Principles />
         <About />
         <FinalCta />

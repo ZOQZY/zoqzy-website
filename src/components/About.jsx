@@ -18,13 +18,16 @@ export default function About() {
       <div id="founders" style={{ maxWidth: 1320, margin: 'clamp(56px,7vw,104px) auto 0' }}>
         <div className="founders-head reveal">
           <div className="label">Founders</div>
-          <div className="meta">04 — placeholder names, photos &amp; bios</div>
         </div>
         <div className="founders-grid">
           {FOUNDERS.map((f) => (
             <div className="founder-card reveal" key={f.num}>
               <div className="founder-photo">
-                <span>Drop founder photo (4:5)</span>
+                {f.image ? (
+                  <img src={f.image} alt={f.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                ) : (
+                  <span>Drop founder photo (4:5)</span>
+                )}
               </div>
               <div className="founder-body">
                 <div className="num">{f.num}</div>

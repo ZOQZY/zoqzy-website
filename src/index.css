@@ -292,6 +292,15 @@ h1, h2, h3, p, dl, dd { margin: 0; }
 .contact-details > div:last-child { border-bottom: 0; padding-bottom: 0; }
 .contact-details dt { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--mut); }
 .contact-details dd { font-weight: 600; }
+.contact-details dd input {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--bd);
+  color: var(--mut);
+  padding: 11px 12px;
+  font-size: 15px;
+  font-weight: 600;
+}
 .contact-form-col { flex: 1 1 460px; min-width: 0; }
 .success-box { border: 1px solid var(--accent); background: var(--bg); padding: clamp(28px, 3vw, 44px); }
 .success-box .tag { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
@@ -303,10 +312,51 @@ h1, h2, h3, p, dl, dd { margin: 0; }
 .field.full { grid-column: 1 / -1; }
 .field label { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--mut); }
 .field input, .field select, .field textarea {
-  padding: 13px 14px; background: transparent; border: 1px solid var(--bd); color: var(--fg); font-size: 15px;
+  padding: 13px 14px; background: var(--bg); border: 1px solid var(--bd); color: var(--mut); font-size: 15px;
 }
-.field textarea { line-height: 1.6; resize: vertical; }
-.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--accent); outline: none; }
+.field select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--mut) 50%), linear-gradient(135deg, var(--mut) 50%, transparent 50%);
+  background-position: calc(100% - 18px) calc(50% - 3px), calc(100% - 12px) calc(50% - 3px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  background-color: var(--bg);
+}
+.field select:hover,
+.field input:hover,
+.field textarea:hover,
+.contact-details dd input:hover {
+  border-color: var(--accent);
+  background: var(--bg);
+}
+.field select:focus,
+.field input:focus,
+.field textarea:focus,
+.contact-details dd input:focus {
+  border-color: var(--accent);
+  color: var(--fg);
+  outline: none;
+}
+.field select option {
+  background: var(--bg);
+  color: var(--mut);
+}
+.field select:hover option,
+.field select:focus option {
+  background: var(--accent);
+  color: var(--fg);
+}
+.field select:hover, .field select:focus {
+  background-color: var(--bg);
+  color: var(--mut);
+}
+.field select option:hover,
+.field select option:checked {
+  background: var(--accent);
+  color: var(--fg);
+}
 .contact-form .btn { grid-column: 1 / -1; justify-self: start; }
 
 /* ---------- footer ---------- */
