@@ -11,7 +11,7 @@ export const SERVICES = [
     num: '01', title: 'Software & Product',
     desc: 'Digital products engineered around your business, your users and your goals.',
     cta: 'Explore Software',
-    items: ['Custom Software Development', 'Web Application Development', 'Mobile Application Development', 'SaaS Development', 'API Development', 'Enterprise Applications', 'Product Engineering', 'Legacy Modernization'],
+    items: ['Cross-platform Software Development', 'Web Application Development', 'Mobile Application Development', 'Desktop Application Development', 'SaaS Development', 'API Development', 'Enterprise Applications', 'Product Engineering', 'Legacy Modernization'],
   },
   {
     num: '02', title: 'AI & Data',
@@ -82,12 +82,12 @@ export const PROCESS = [
 ]
 
 export const TECH = [
-  { name: 'Languages', items: ['Python', 'JavaScript', 'TypeScript', 'Java', 'Go', 'C#'] },
-  { name: 'Frontend', items: ['React', 'Next.js', 'Vue', 'Angular'] },
+  { name: 'Languages', items: ['Python', 'JavaScript', 'C#', 'JQuery', 'TypeScript', 'Java', 'Go'] },
+  { name: 'Frontend', items: ['React', 'Next.js', 'Vue', 'Angular', 'MAUI', 'Xamarin', 'WPF', 'WinForms', 'ASP.NET'] },
   { name: 'Backend', items: ['Django', 'FastAPI', 'Node.js', '.NET'] },
   { name: 'AI & Data', items: ['Machine Learning', 'Generative AI', 'LLMs', 'Data Engineering', 'Analytics'] },
   { name: 'Cloud', items: ['AWS', 'Azure', 'Google Cloud', 'Docker', 'Kubernetes'] },
-  { name: 'Databases', items: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis'] },
+  { name: 'Databases', items: ['PostgreSQL', 'MySQL', 'MongoDB', 'SQLite', 'Redis'] },
 ]
 
 export const WORK = [
@@ -119,8 +119,8 @@ export const PRINCIPLES = [
 ]
 
 export const FOUNDERS = [
-  { num: '01', name: 'Founder One', role: 'Chief Executive Officer', bio: 'Placeholder bio — leads company strategy, client partnerships and long-term technology direction.' },
-  { num: '02', name: 'Founder Two', role: 'Chief Technology Officer', bio: 'Placeholder bio — owns engineering standards, architecture decisions and platform reliability.' },
-  { num: '03', name: 'Founder Three', role: 'Head of AI & Data', bio: 'Placeholder bio — leads applied AI, data engineering and analytics practice across projects.' },
-  { num: '04', name: 'Founder Four', role: 'Head of Design & Product', bio: 'Placeholder bio — leads product thinking, experience design and the shared design system.' },
+  { num: '01', name: 'Akhil', role: 'Chief Executive Officer', bio: 'Leads company strategy, client partnerships and long-term technology direction.', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&h=1200&q=80' },
+  { num: '02', name: 'Midhun', role: 'Chief Technology Officer', bio: 'Owns engineering standards, architecture decisions and platform reliability.', image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&h=1200&q=80' },
+  { num: '03', name: 'Jishnu', role: 'Head of AI & Data', bio: 'Leads applied AI, data engineering and analytics practice across projects.', image: 'https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=900&h=1200&q=80' },
+  { num: '04', name: 'Ajmal', role: 'Head of Design & Product', bio: 'Leads product thinking, experience design and the shared design system.', image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&h=1200&q=80' },
 ]
